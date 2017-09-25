@@ -4,7 +4,7 @@ void setup()
 {     
 	size(350,300);
 	colony = new Firefly[50];
-	colony1 = new Light[5];
+	colony1 = new Light[4];
 	for(int i = 0; i < colony.length; i++)
  	{
  		colony[i] = new Firefly();
@@ -22,11 +22,10 @@ void draw()
     	colony[i].walk();
     	colony[i].show(); 
   	}
-  	frameRate(0);
   	for(int x = 0; x < colony1.length; x++)
 	{ 
     	colony1[x].walk();
-    	colony1[x].show(); 
+    	colony1[x].show();
   	}
 }  
 class Firefly
@@ -66,7 +65,9 @@ class Light
 	void show()
 	{
 		noStroke();
-		fill(255,255,255,(int)(Math.random()*250)+1);
-		ellipse(myX1,myY1,10,10);
+		fill(255,255,255,(int)(Math.random()*30)+100);
+		//ellipse(myX1,myY1,14,14);
+		rect(myX1,myY1,9.5,9.5);
+		rect(myX1,myY1,12,12);
 	}
 }
